@@ -26,8 +26,9 @@ namespace DotNetCoreWebApi.Services{
         public static void Delete(Pizza pizza){
             pizza = Get(pizza.Id);
             if(pizza is null) return;
-            Delete(pizza);
+            Pizzas.Remove(pizza);
         }
+        
 
         public static void Update(Pizza pizza){
             var index = Pizzas.FindIndex(p => p.Id == pizza.Id);
